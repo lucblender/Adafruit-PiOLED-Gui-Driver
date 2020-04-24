@@ -103,7 +103,7 @@ class Selector_screen_btn:
     def draw_text_screen_wait_select(self, lines): 
         self.draw_text_screen(lines)
         while(self.selected == False):
-            time.sleep(0.01)
+            time.sleep(0.1)
         self.selected = False
     
     
@@ -135,6 +135,8 @@ class Selector_screen_btn:
             self.draw_text_screen(to_draw)
                 
             time.sleep(0.1)
+        
+        self.selected = False
         return (self.index,choices[self.index])
     
     def draw_text_with_delay(self, lines, delay):    
@@ -175,6 +177,8 @@ class Selector_screen_btn:
             
             
             time.sleep(0.1)
+        
+        self.selected = False
         return (self.index,lines[self.index])
         
     def draw_text_screen_selector_with_title(self, title, lines):
@@ -201,6 +205,8 @@ class Selector_screen_btn:
                 
                 self.draw_text_screen([title]+to_draw)
             time.sleep(0.1)
+        
+        self.selected = False
         return (self.index,lines[self.index])
         
     def add_center_padding_text(self, text):
